@@ -1,6 +1,7 @@
 import { Media } from "../media";
 import { Segment } from "semantic-ui-react";
 import Test from "../components/test";
+import Step from "../components/Step";
 export default function About() {
   return (
     <>
@@ -22,7 +23,16 @@ export default function About() {
       <Segment as={Media} at="xxl">
         this is xxl
       </Segment> */}
-      <Test />
+      <Segment>
+        <Step icon="users" iconColor="#ff562e">
+          <h4>Dynamic gravity</h4>
+          <span>2020-12-12 20:00</span>
+        </Step>
+        <Step icon="money" iconColor="grey">
+          <h4>Dynamic gravity</h4>
+          <span>2020-12-12 20:00</span>
+        </Step>
+      </Segment>
     </>
   );
 }

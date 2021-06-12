@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
-const Item = styled.li`
+const ItemBox = styled.li`
   width: 100%;
+  margin-top: 1.25rem;
+  list-style: none;
   a {
     display: flex;
     align-items: center;
@@ -10,24 +12,22 @@ const Item = styled.li`
     font-weight: 500;
     border-radius: ${(props) => (props.actived ? "5px" : null)};
     box-shadow: ${(props) =>
-      props.actived ? `0 20px 10px 0 rgb(0 0 0 /9%)` : null};
+      props.actived ? `0 20px 27px 0 rgb(0 0 0 /5%)` : null};
+    white-space: nowrap;
+    background: ${(props) => (props.actived ? "#ffffff" : "inherit")};
     &:hover {
       cursor: pointer;
     }
-    span {
-      color: ${(props) => (props.actived ? "#252f40" : "#67748e")};
-    }
-    background: ${(props) => (props.actived ? "#ffffff" : "inherit")};
+    color: ${(props) => (props.actived ? "#252f40" : "#67748e")};
   }
 `;
 
-const Item = ({ width, height, icon, text, actived }) => {
+const Item = ({ actived, click, children }) => {
   return (
-    <Item actived={actived} id={text}>
-      <a>
-        {" "}
-        <span>{text}</span>
-      </a>
-    </Item>
+    <ItemBox actived={actived} onClick={click}>
+      <a>{children}</a>
+    </ItemBox>
   );
 };
+
+export default Item;

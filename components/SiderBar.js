@@ -14,11 +14,10 @@ const Asider = styled.div`
 
   @media (max-width: 1200px) {
     height: 95vh;
-    box-shadow: 0 20px 27px rgb(0 0 0 / 20%);
+    box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
     background-color: #fff;
     border-radius: 1rem;
     margin: 0 0 0 1rem;
-    /* display: ${(props) => (props.open ? null : "none")}; */
     transform: ${(props) => (props.open ? null : "translateX(-300px)")};
     z-index: 1;
     transition: all 0.2s ease-in-out;
@@ -31,7 +30,7 @@ const AsiderHead = styled.div`
   position: relative;
   img {
     max-width: 100%;
-    max-height: 2rem;
+    max-height: 3rem;
   }
   h2 {
     color: #252f40;
@@ -57,7 +56,7 @@ const AsiderHead = styled.div`
   }
 `;
 
-export default function SiderBar({ open, close }) {
+export default function SiderBar({ open, close, children }) {
   return (
     <Asider open={open}>
       <AsiderHead>
@@ -66,6 +65,7 @@ export default function SiderBar({ open, close }) {
         <Icon name="times" onClick={close} />
       </AsiderHead>
       <hr />
+      {children}
     </Asider>
   );
 }

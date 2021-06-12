@@ -1,4 +1,4 @@
-import { Segment, Icon, Breadcrumb } from "semantic-ui-react";
+import { Icon, Breadcrumb } from "semantic-ui-react";
 import { Media } from "../media";
 
 export default function Test() {
@@ -39,7 +39,6 @@ export default function Test() {
         <Breadcrumb.Section as={Media} greaterThan="xl" link>
           greater than lg
         </Breadcrumb.Section>
-
         <Breadcrumb.Section as={Media} lessThan="lg">
           <Icon name="facebook"></Icon>
         </Breadcrumb.Section>
