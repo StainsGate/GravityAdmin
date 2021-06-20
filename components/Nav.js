@@ -34,7 +34,7 @@ const HeaderBox = styled.div`
 
 // sidebar
 
-export default function Header({ top, iconClick }) {
+export default function Nav({ top, breadcrumb, iconClick }) {
   return (
     <HeaderBox Top={top}>
       <Breadcrumb>
@@ -45,7 +45,7 @@ export default function Header({ top, iconClick }) {
           <Icon name="bars" onClick={iconClick} />{" "}
         </Breadcrumb.Section>
         <Breadcrumb.Divider />
-        <Breadcrumb.Section link>Dashboard</Breadcrumb.Section>
+        <Breadcrumb.Section link>{breadcrumb}</Breadcrumb.Section>
       </Breadcrumb>
 
       <ul>

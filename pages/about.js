@@ -1,7 +1,8 @@
 import { Media } from "../media";
-import { Segment } from "semantic-ui-react";
+import { Segment, Grid } from "semantic-ui-react";
 import Test from "../components/test";
 import Step from "../components/Step";
+import CreditCard from "../components/CreditCard";
 export default function About() {
   return (
     <>
@@ -33,6 +34,14 @@ export default function About() {
           <span>2020-12-12 20:00</span>
         </Step>
       </Segment>
+      <Grid>
+        <Grid.Row>
+          <Grid.Column width={10}>
+            <CreditCard></CreditCard>
+          </Grid.Column>
+          <Grid.Column width={6}></Grid.Column>
+        </Grid.Row>
+      </Grid>
     </>
   );
 }

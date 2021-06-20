@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import SiderBar from "../components/SiderBar";
-import Header from "../components/Header";
+import Nav from "../components/Nav";
 import IconCard from "../components/IconCard";
 import Item from "../components/Item";
 import List from "../components/List";
@@ -91,7 +91,6 @@ export default function Index() {
   };
 
   const siderControll = () => {
-    console.log("siderControll");
     setOpen(!open);
   };
 
@@ -103,23 +102,19 @@ export default function Index() {
     }
   };
 
-  const itemClick = (e) => {
-    console.log(e.target);
-  };
-
   return (
     <>
       <SiderBar open={open} close={close}>
         <List>
-          <Item actived id="dashboard" click={itemClick}>
+          <Item actived to="/">
             <IconCard icon="dashboard" actived></IconCard>
             <span>Dashboard</span>
           </Item>
-          <Item>
+          <Item to="/bill">
             <IconCard icon="credit card"></IconCard>
             <span>Billing</span>
           </Item>
-          <Item>
+          <Item to="/table">
             <IconCard icon="table"></IconCard>
             <span>Table</span>
           </Item>
@@ -138,7 +133,7 @@ export default function Index() {
         </List>
       </SiderBar>
       <IndexLayout onScroll={scroll}>
-        <Header top={top} iconClick={siderControll}></Header>
+        <Nav top={top} iconClick={siderControll} breadcrumb="Dashboard"></Nav>
         <Grid>
           <Grid.Row>
             <Grid.Column width={4}>

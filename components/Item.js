@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useRouter } from "next/router";
 
 const ItemBox = styled.li`
   width: 100%;
@@ -22,9 +23,19 @@ const ItemBox = styled.li`
   }
 `;
 
-const Item = ({ actived, click, children }) => {
+const Item = ({ actived, to, children }) => {
+  const router = useRouter();
+
+  const clickHandle = () => {
+    if (to === undefined) {
+      console.log("undefined");
+    } else {
+      router.push(to);
+    }
+  };
+
   return (
-    <ItemBox actived={actived} onClick={click}>
+    <ItemBox actived={actived} onClick={clickHandle}>
       <a>{children}</a>
     </ItemBox>
   );
